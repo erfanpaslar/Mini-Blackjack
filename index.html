@@ -1,0 +1,144 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.11.1/css/all.css"
+    />
+    <link rel="icon" type="image/png" href="./blackjackIcon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="table">
+      <div class="winner">
+        <h1>Blackjack</h1>
+      </div>
+      <div class="money">
+        <i class="fad fa-coins"></i> <span id="money"></span>
+      </div>
+      <div class="dealersSom"></div>
+      <div class="yourSom"></div>
+      <div class="anotherYourSom"></div>
+      <div class="dealer">
+        <div class="handDealer"></div>
+      </div>
+
+      <div class="you">
+        <div class="handYou"></div>
+      </div>
+      <span class="coins">
+        <span class="coin1 coin" onclick="changeBet(1)" id="1"
+          ><i class="fad fa-coin icon activeCoin"></i
+          ><span class="amount">&nbsp;&nbsp;1</span></span
+        >
+        <span class="coin2 coin" onclick="changeBet(2)" id="2"
+          ><i class="fad fa-coin icon"></i
+          ><span class="amount">&nbsp;&nbsp;2</span></span
+        >
+        <span class="coin5 coin" onclick="changeBet(5)" id="5"
+          ><i class="fad fa-coin icon"></i
+          ><span class="amount">&nbsp;&nbsp;5</span></span
+        >
+        <span class="coin10 coin" onclick="changeBet(10)" id="10"
+          ><i class="fad fa-coin icon"></i
+          ><span class="amount">&nbsp;10&nbsp;</span></span
+        >
+        <span class="coin20 coin" onclick="changeBet(20)" id="20"
+          ><i class="fad fa-coin icon"></i
+          ><span class="amount">&nbsp;20&nbsp;</span></span
+        >
+        <span class="coin50 coin" onclick="changeBet(50)" id="50"
+          ><i class="fad fa-coin icon"></i
+          ><span class="amount">&nbsp;50&nbsp;</span></span
+        >
+        <span class="coin100 coin" onclick="changeBet(100)" id="100"
+          ><i class="fad fa-coin icon"></i><span class="amount">100</span></span
+        >
+      </span>
+
+      <div class="dealPos aria dealED" onclick="dealAgain()">
+        <p>DEAL</p>
+      </div>
+
+      <div class="hitPos aria hitNStand" onclick="hit()">
+        <p>HIT</p>
+      </div>
+      <div class="standPos aria hitNStand" onclick="stand()">
+        <p>stand</p>
+      </div>
+      <span class="note" onclick="help()"
+        ><i class="fad fa-sticky-note"></i
+      ></span>
+      <span id="restart" class="undo hide" onclick="restartGame()"
+        ><i class="fad fa-undo-alt"></i
+      ></span>
+    </div>
+    <div id="help" class="help hide">
+      <span class="times" onclick="help(1)"
+        ><i class="fad fa-times fa-2x"></i
+      ></span>
+      <h2>Mini Blackjack Rules</h2>
+      <p class="rulesP">
+        The goal of blackjack is to beat the dealer's hand without going over
+        21.
+      </p>
+      <p class="rulesP">
+        Face cards are worth 10. Aces are worth 1 or 11, whichever makes a
+        better hand.
+      </p>
+      <p class="rulesP">
+        Each player starts with two cards, one of the dealer's cards is hidden
+        until the end.
+      </p>
+      <p class="rulesP">
+        To 'Hit' is to ask for another card. To 'Stand' is to hold your total
+        and end your turn.
+      </p>
+      <p class="rulesP">
+        If you go over 21 you bust, and the dealer wins regardless of the
+        dealer's hand.
+      </p>
+      <p class="rulesP">
+        If you are dealt 21 from the start (Ace & 10), you got a blackjack.
+      </p>
+      <p class="rulesP">
+        Blackjack usually means you win 1.5 the amount of your bet. Depends on
+        the casino.
+      </p>
+      <p class="rulesP">
+        Dealer will hit until his/her cards total 17 or higher.
+        <a class="ref" href="http://www.hitorstand.net/strategy.php"
+          >From here</a
+        >
+      </p>
+      <p class="rulesP">
+        Inspired by
+        <a
+          class="ref"
+          href="https://dribbble.com/shots/13965521-Online-Poker-Casino-App"
+          >uixNinja</a
+        >
+        and the icon made by
+        <a
+          class="ref"
+          href="https://dribbble.com/shots/14490139-Custom-Playing-Card-Loader"
+          >Stephen W. Piercey</a
+        >.
+      </p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

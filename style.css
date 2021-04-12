@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+:root {
+  --cardMainColor: #373d6c;
+  --boardMainColor: #3d4475;
+  --letterColor: #d7e5ff;
+}
+
+body {
+  background-color: var(--boardMainColor);
+  font-family: "Fredoka One", cursive;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+  border: 0;
+  user-select: none;
+}
+
+h1 {
+  color: var(--letterColor);
+}
+
+p {
+  color: #a0a7b4;
+  text-align: center;
+  font-size: 2rem !important;
+}
+
+/* ? NO CHANGES ? */
+
+.letter {
+  position: absolute;
+  color: var(--letterColor);
+  font-size: 2rem;
+}
+
+.shape {
+  position: relative;
+  font-size: 2.3rem;
+}
+
+.handDealer,
+.handYou {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  font-size: 3rem;
+}
+
+.dealPos,
+.hitPos,
+.standPos,
+.doublePos,
+.splitPos {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.dealPos {
+  left: 0;
+}
+
+.hitPos {
+  left: 30%;
+  /* left: 20%; */
+}
+
+.standPos {
+  left: 60%;
+  /* left: 40%; */
+}
+
+/* .doublePos {
+    left: 60%;
+}*/
+.splitPos {
+  left: 80%;
+}
+
+.card {
+  margin: 0.5em 0.25em;
+  min-width: 1em;
+  padding: 0.4em;
+  border-radius: 0.2em;
+  background-color: var(--cardMainColor);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.274), 0 2px 5px 0 rgba(0, 0, 0, 0.315);
+  text-align: right;
+  line-height: 1;
+  /*  */
+  cursor: pointer;
+  transition: transform 1s ease;
+  /*  */
+  animation: dealACard 0.3s linear;
+}
+
+@keyframes dealACard {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.noBack {
+  background-color: #0610a17a !important;
+}
+
+.heart,
+.diamond {
+  color: #c53030;
+}
+
+.club,
+.spade {
+  color: #5e85f7;
+}
+
+.fa-beat {
+  animation: fa-beat 5s ease infinite;
+}
+
+@keyframes fa-beat {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.2);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.deal {
+  font-size: 1.2rem;
+  text-align: center !important;
+}
+
+.winner {
+  margin-top: 0;
+  text-align: center;
+  /* position: absolute; */
+  top: 5rem;
+}
+
+.dealersSom {
+  position: absolute;
+  right: 4rem;
+  top: 7rem;
+}
+
+.yourSom {
+  position: absolute;
+  right: 4rem;
+  top: 18rem;
+}
+
+.money {
+  position: absolute;
+  font-size: 2rem;
+  color: #eec550;
+  left: 3.5rem;
+  top: 2rem;
+}
+.table {
+  background-color: #353a64;
+  height: 120vh !important;
+  width: 80%;
+  border-radius: 5rem;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.431),
+    0 20px 20px 0 rgba(0, 0, 0, 0.472);
+  margin: 0 auto;
+  padding-top: 1rem;
+  z-index: -10000;
+  border: 1em solid #262947;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg) translateY(-20vh)
+    translateX(15vh);
+}
+
+.aria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000000 !important;
+  margin: 0rem 0 0 3rem;
+  width: 20%;
+  cursor: pointer;
+  height: 6em;
+  border-radius: 0.5rem;
+  transition-duration: 0.5s;
+}
+
+.aria:hover {
+  background-color: #00000055 !important;
+  transition-duration: 0.2s;
+  /* transform: scale(1.2); */
+}
+
+.note {
+  font-size: 3rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #f9e3a3;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.note:hover {
+  transform: scale(1.5);
+  transition-duration: 0.5s;
+}
+.undo {
+  font-size: 2rem;
+  position: absolute;
+  top: 2.5rem;
+  left: 10rem;
+  color: #ff7979;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  /* transform: rotateZ(20deg); */
+}
+.undo:hover {
+  transform: rotateZ(-90deg) scale(1.2);
+}
+
+.help {
+  position: fixed;
+  width: 90vw;
+  left: 5vw;
+  height: 90vh;
+  top: 2.5vh;
+  border-radius: 1rem;
+  background-color: #e9e9e90e;
+  backdrop-filter: blur(10px);
+  padding: 1vw;
+  /* padding: 0.5rem; */
+}
+.rulesP {
+  font-family: "Schoolbell", cursive;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem !important;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+h2 {
+  font-family: "Schoolbell", cursive;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+}
+.ref {
+  text-decoration: none;
+  color: #222642;
+}
+.ref:hover {
+  color: #aa2e2e;
+  transition-duration: 0.5s;
+}
+.times {
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  color: #fff;
+  top: 1rem;
+}
+.times:hover {
+  transform: scale(1.1);
+}
+.hide {
+  visibility: hidden;
+}
+
+.coins {
+  position: absolute;
+  right: 5rem;
+  bottom: 7rem;
+  /* top: -5.5rem; */
+  cursor: pointer;
+}
+
+.activeCoin {
+  transform: rotateZ(45deg) rotateY(45deg) scale(1.2) !important;
+}
+
+.icon {
+  margin: 0 0.1rem;
+  font-size: 4.5rem;
+  transform: rotateZ(45deg) rotateY(45deg);
+  transition-duration: 0.5s;
+}
+/* .icon:hover {
+  transform: rotateZ(45deg) rotateY(45deg) scale(1.2);
+  transition-duration: 0.5s;
+} */
+.amount {
+  color: #d7e5ff;
+  position: absolute;
+  top: -1.7rem;
+  left: 1.9rem;
+  z-index: -1;
+}
+.coin1 {
+  position: relative;
+  color: white;
+}
+.coin2 {
+  position: relative;
+  color: #ffc12d;
+}
+.coin5 {
+  position: relative;
+  color: #fc3a52;
+}
+.coin10 {
+  position: relative;
+  color: #00adb5;
+}
+.coin20 {
+  position: relative;
+  color: #00ad7c;
+}
+.coin50 {
+  position: relative;
+  color: #f58634;
+}
+.coin100 {
+  color: #000;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .shape {
+    font-size: 1.5rem;
+  }
+  .card {
+    margin: 0.3em 0.15em;
+    min-width: 0.8em;
+    padding: 0.2em;
+    line-height: 0.9;
+  }
+  .table {
+    margin-top: 3rem;
+    height: 80% !important;
+    width: 90%;
+    height: auto;
+    padding-top: 0rem;
+    border: 0.5em solid #262947;
+    border-radius: 2rem;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  p {
+    font-size: 1.3rem !important;
+  }
+  .letter {
+    font-size: 1.3rem;
+  }
+  .aria {
+    height: 4em;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  .money {
+    left: 2rem;
+    font-size: 1.3rem;
+    top: 1rem;
+  }
+  .dealersSom {
+    right: 3%;
+    top: 4.5rem;
+  }
+  .yourSom {
+    right: 3%;
+    top: 12rem;
+  }
+  .help {
+    height: 85%;
+  }
+
+  .aria {
+    height: 3em;
+    margin: 0rem 0 0 2rem;
+  }
+  .winner {
+    margin-top: 3rem;
+  }
+  .rulesP {
+    font-size: 0.9rem !important;
+    line-height: 1rem;
+  }
+  .note {
+    font-size: 2rem;
+    top: 1rem;
+    right: 2rem;
+  }
+  .times {
+    transform: scale(0.8);
+  }
+  .times:hover {
+    transform: scale(0.9);
+  }
+  .coins {
+    /* top: -2.5rem; */
+    right: 1rem;
+    bottom: 4rem;
+    cursor: auto;
+  }
+  .icon {
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+    transform: rotateZ(0) rotateY(0);
+  }
+  /* .icon:hover {
+    transform: rotateZ(0) rotateY(0) scale(1.2);
+    transition-duration: 0.5s;
+  } */
+  .amount {
+    font-size: 0.8rem;
+    color: #d7e5ff;
+    position: absolute;
+    top: -0.7rem;
+    left: 0.7rem;
+    /* left: 0; */
+  }
+  .activeCoin {
+    transform: scale(1.2) !important;
+  }
+
+  .undo {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 1.2rem;
+    left: 6rem;
+    color: #ff7979;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    /* transform: rotateZ(20deg); */
+  }
+  .undo:hover {
+    transform: rotateZ(-90deg) scale(1.2);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .icon {
+    font-size: 2rem;
+    margin-right: 0.2rem;
+  }
+  .amount {
+    font-size: 0.6rem;
+    color: #d7e5ff;
+    position: absolute;
+    top: -0.4rem;
+    left: 0.65rem;
+    /* left: 0; */
+  }
+}
