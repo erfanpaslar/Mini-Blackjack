@@ -2,7 +2,7 @@
 
 This is a simple blackjack game.
 
-It also runs on [erfanpaslar.ir/blackjack](https://erfanpaslar.ir/blackjack)
+It also runs on [erfanpaslar.github.io/Mini-Blackjack](https://erfanpaslar.github.io/Mini-Blackjack/)
 
 <span style="display:block;text-align:center">
 
