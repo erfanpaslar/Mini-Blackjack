@@ -1,5 +1,7 @@
 if("serviceWorker" in navigator){
-  window.addEventListener("load", function(){
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.getRegistrations().then((r)=>{r[0].unregister()})
+
     navigator.serviceWorker.register("/serviceWorker.js").then(function(registration){
       console.log("Service Worker Registered");
     }).catch(function(err){
